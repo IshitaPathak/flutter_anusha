@@ -1,19 +1,21 @@
-
 import 'package:demo/slidebar.dart';
 import 'package:flutter/material.dart';
-// import 'package:firebase_core/firebase_core.dart';
-
+import 'package:firebase_core/firebase_core.dart';
 
 // Future<void> main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
 //   await Firebase.initializeApp();
 //   runApp(const MyApp());
 // }
-void main(){
-  runApp (MaterialApp(
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  runApp(MaterialApp(
     home: MyApp(),
   ));
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -22,19 +24,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-    
-    
-
       theme: ThemeData(
-        
-        primarySwatch: Colors.blue,),
-      
+        primarySwatch: Colors.blue,
+      ),
       home: const slidebar(),
-      
-      
-    
     );
-
   }
 }
-
